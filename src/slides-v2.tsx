@@ -14,45 +14,66 @@ export type SlideDef = {
 
 export const slidesV2: SlideDef[] = [
   {
-    id: "opening",
-    notesTitle: "Opening",
-    notes: [
-      "Pause before the second line.",
-      "Do not explain immediately.",
-      "Let the device sit in silence for one beat.",
-    ],
-    render: () => (
-      <div className="slide hero-slide">
-        <ParallaxLayer speed={0.3} className="bg-orb bg-orb-left" />
-        <ParallaxLayer speed={0.5} className="bg-orb bg-orb-right" />
+  id: "opening",
+  notesTitle: "Opening",
+  notes: [
+    "Pause after the first headline block.",
+    "Let the device sit visually before speaking the supporting line.",
+    "This slide should feel expensive, not busy.",
+  ],
+  render: () => (
+    <div className="slide hero-slide hero-slide-premium">
+      <ParallaxLayer speed={0.22} className="hero-ambient hero-ambient-left" />
+      <ParallaxLayer speed={0.32} className="hero-ambient hero-ambient-right" />
+      <ParallaxLayer speed={0.18} className="hero-grid-glow" />
 
-        <div className="hero-device-shell">
-          <div className="hero-device-wrap">
-            <DeviceSilhouette era="modern" className="hero-device-v2" />
-            <LightSweep delay={0.85} />
-          </div>
-        </div>
+      <div className="hero-copy premium-copy">
+        <TextReveal className="hero-kicker" delay={0.08}>
+          A visual history of the iPhone
+        </TextReveal>
 
-        <div className="content-wrap">
-          <TextReveal className="eyebrow" delay={0.1}>
-            History of the iPhone
-          </TextReveal>
+        <TextReveal className="hero-title-premium" delay={0.24}>
+          The iPhone didn’t just
+          <br />
+          change technology.
+        </TextReveal>
 
-          <TextReveal className="headline" delay={0.3}>
-            The iPhone didn’t just
-            <br />
-            change technology.
-          </TextReveal>
+        <TextReveal
+          className="hero-title-premium hero-title-secondary"
+          delay={0.82}
+        >
+          It changed what people
+          <br />
+          expect from reality.
+        </TextReveal>
 
-          <TextReveal className="headline dimmed" delay={0.95}>
-            It changed what humans
-            <br />
-            expect from reality.
-          </TextReveal>
+        <TextReveal className="hero-support" delay={1.18}>
+          From a single multi-touch breakthrough to the device that reshaped
+          communication, photography, software, identity, and everyday life.
+        </TextReveal>
+      </div>
+
+      <div className="hero-visual-premium">
+        <div className="hero-light-source" />
+        <div className="hero-device-stage">
+          <div className="hero-device-halo" />
+          <div className="hero-device-reflection" />
+
+          <ParallaxLayer speed={0.28} className="hero-device-floating">
+            <div className="hero-device-wrap premium-device-wrap">
+              <img
+                src="/iphone-hero.png"
+                className="hero-device-real"
+                alt="Enhanced iPhone hero render"
+              />
+              <LightSweep delay={0.95} />
+            </div>
+          </ParallaxLayer>
         </div>
       </div>
-    ),
-  },
+    </div>
+  ),
+},
 
   {
     id: "2007-origin",
